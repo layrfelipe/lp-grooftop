@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import styles from "./page.module.scss";
 
-export default function ContactUs() {
+function ContactUsContent() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,6 +15,22 @@ export default function ContactUs() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
+
+  useEffect(() => {
+    const subjectParam = searchParams.get('subject');
+
+    if (subjectParam === 'MVP') {
+      setFormData(prevData => ({
+        ...prevData,
+        subject: "I want to test the MVP",
+        message: "Hi Grooftop team, I'm interested in testing the MVP. Please let me know the next steps!",
+      }));
+
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.delete('subject');
+      window.history.replaceState({}, '', currentUrl.toString());
+    }
+  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -81,5 +99,13 @@ export default function ContactUs() {
         </form>
       </div>
     </div>
+  );
+}
+
+export default function ContactUs() {
+  return (
+    <Suspense fallback={<div className={styles.loadingFallback}>Loading...</div>}>
+      <ContactUsContent />
+    </Suspense>
   );
 }

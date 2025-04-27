@@ -1,7 +1,16 @@
+"use client";
+
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './FeatureSection.module.scss';
 
 export default function FeatureSection() {
+  const router = useRouter();
+
+  const handleCtaClick = () => {
+    router.push('/contact-us?subject=MVP')
+  }
+
   return (
     <section className={styles.features}>
       <div className={styles.featureContainer} id="forCityExplorers">
@@ -37,8 +46,8 @@ export default function FeatureSection() {
           </div>
 
           <div className={styles.cta}>
-            <button className={styles.ctaButton} id={styles.webCta}>Try it on the Web</button>
-            <button className={styles.ctaButton} id={styles.androidCta}>Get it on Android</button>
+            <button onClick={handleCtaClick} className={styles.ctaButton} id={styles.webCta}>Try it on the Web</button>
+            <button onClick={handleCtaClick} className={styles.ctaButton} id={styles.androidCta}>Get it on Android</button>
           </div>
         </div>
 
@@ -88,8 +97,8 @@ export default function FeatureSection() {
           </div>
 
           <div className={styles.cta}>
-            <button className={styles.ctaButton} id={styles.webCta}>Try it on the Web</button>
-            <button className={styles.ctaButton} id={styles.androidCta}>Get it on Android</button>
+            <button onClick={handleCtaClick} className={styles.ctaButton} id={styles.webCta}>Try it on the Web</button>
+            <button onClick={handleCtaClick} className={styles.ctaButton} id={styles.androidCta}>Get it on Android</button>
           </div>
         </div>
       </div>
@@ -104,8 +113,8 @@ export default function FeatureSection() {
           <h3 className={styles.ctaTextStrong}>We&apos;re live in Rio. Expanding soon.</h3>
           <h3 className={styles.ctaText}>Be part of the Rooftops revolution</h3>
           <div className={styles.cta}>
-            <button className={styles.ctaButton} id={styles.webCta}>Try it on the Web</button>
-            <button className={styles.ctaButton} id={styles.androidCta}>Get it on Android</button>
+            <button onClick={handleCtaClick} className={styles.ctaButton} id={styles.webCta}>Try it on the Web</button>
+            <button onClick={handleCtaClick} className={styles.ctaButton} id={styles.androidCta}>Get it on Android</button>
           </div>
         </div>
       </div>
