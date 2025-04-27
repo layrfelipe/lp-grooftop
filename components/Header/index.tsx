@@ -5,13 +5,15 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
 import { FaBars } from 'react-icons/fa';
-
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
   const [windowSize, setWindowSize] = useState<{ width: number | undefined; height: number | undefined }>({
     width: undefined,
     height: undefined,
   });
+
+  const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -24,16 +26,13 @@ export default function Header() {
       });
       setIsMobile(currentWidth <= 900);
     }
+
     window.addEventListener('resize', handleResize);
-
     handleResize();
-
-    // Add smooth scroll CSS behavior globally (optional, for anchor method)
     document.documentElement.style.scrollBehavior = 'smooth';
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      // Clean up style on unmount
       document.documentElement.style.scrollBehavior = '';
     }
   }, []);
@@ -42,12 +41,17 @@ export default function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
 
-  const handleMobileLinkClick = (sectionId?: string) => {
-    setIsMobileMenuOpen(false); // Close menu on click
-    // Optional: If using JS scroll method, call it here
-    // if (sectionId) {
-    //   scrollToSection(sectionId);
-    // }
+  const handleMobileLinkClick = (routePath: string, sectionId: string | null) => {
+    setIsMobileMenuOpen(false);
+    handleLinkClick(routePath, sectionId);
+  }
+
+  const handleLinkClick = (routePath: string, sectionId: string | null) => {
+    if (sectionId) {
+      router.push(`${routePath}?section=${sectionId}`);
+    } else {
+      router.push(routePath);
+    }
   }
 
   return (
@@ -74,27 +78,27 @@ export default function Header() {
                     <nav className={styles.mobileNav}>
                       <ul className={styles.mobileNavList}>
                         <li className={styles.mobileNavItem}>
-                          <Link href="/" className={styles.mobileNavLink} onClick={() => handleMobileLinkClick()}>
+                          <h6 className={styles.mobileNavLink} onClick={() => handleMobileLinkClick('/', 'explorers')}>
                              For City Explorers & Experience Seekers
-                          </Link>
+                          </h6>
                         </li>
                         <li className={styles.mobileNavItem}>
-                           <Link href="/" className={styles.mobileNavLink} onClick={() => handleMobileLinkClick()}>
-                             For Rooftop Owners
-                           </Link>
+                          <h6 className={styles.mobileNavLink} onClick={() => handleMobileLinkClick('/', 'owners')}>
+                            For Rooftop Owners
+                          </h6>
                         </li>
                         <li className={styles.mobileNavItem}>
-                          <Link href="/about-us" className={styles.mobileNavLink} onClick={() => handleMobileLinkClick()}>About Us</Link>
+                          <h6 className={styles.mobileNavLink} onClick={() => handleMobileLinkClick('/about-us', null)}>About Us</h6>
                         </li>
                         <li className={styles.mobileNavItem}>
-                          <Link href="/contact-us" className={styles.mobileNavLink} onClick={() => handleMobileLinkClick()}>Contact Us</Link>
+                          <h6 className={styles.mobileNavLink} onClick={() => handleMobileLinkClick('/contact-us', null)}>Contact Us</h6>
                         </li>
                       </ul>
                     </nav>
 
                     <div className={styles.mobileCta}>
                        <Link href="/" className={styles.mobileCtaButtonAnchor}>
-                          <button className={styles.mobileCtaButton} onClick={() => handleMobileLinkClick()}>Start Exploring Now</button>
+                          <button className={styles.mobileCtaButton} onClick={() => {}}>Start Exploring Now</button>
                        </Link>
                     </div>
                   </div>
@@ -114,16 +118,16 @@ export default function Header() {
               <nav className={styles.nav}>
                 <ul className={styles.navList}>
                   <li className={styles.navItem}>
-                    <Link href="/" className={styles.navLink}>For City Explorers & Experience Seekers</Link>
+                    <h6 className={styles.navLink} onClick={() => handleLinkClick('/', 'explorers')}>For City Explorers & Experience Seekers</h6>
                   </li>
                   <li className={styles.navItem}>
-                    <Link href="/" className={styles.navLink}>For Rooftop Owners</Link>
+                    <h6 className={styles.navLink} onClick={() => handleLinkClick('/', 'owners')}>For Rooftop Owners</h6>
                   </li>
                   <li className={styles.navItem}>
-                    <Link href="/about-us" className={styles.navLink}>About Us</Link>
+                    <h6 className={styles.navLink} onClick={() => handleLinkClick('/about-us', null)}>About Us</h6>
                   </li>
                   <li className={styles.navItem}>
-                    <Link href="/contact-us" className={styles.navLink}>Contact Us</Link>
+                    <h6 className={styles.navLink} onClick={() => handleLinkClick('/contact-us', null)}>Contact Us</h6>
                   </li>
                 </ul>
               </nav>

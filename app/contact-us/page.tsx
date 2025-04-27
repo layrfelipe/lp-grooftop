@@ -40,13 +40,11 @@ export default function ContactUs() {
       }
 
       const result = await response.json();
-      console.log("Success:", result);
       setFeedbackMessage("Message sent successfully!");
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
 
     } catch (error) {
       setIsLoading(false);
-      console.error("Error submitting form:", error);
       setFeedbackMessage(`Failed to send message: ${error instanceof Error ? error.message : String(error)}`);
     }
   };

@@ -4,7 +4,7 @@ import styles from './FeatureSection.module.scss';
 export default function FeatureSection() {
   return (
     <section className={styles.features}>
-      <div className={styles.featureContainer} id={styles.forCityExplorers}>
+      <div className={styles.featureContainer} id="forCityExplorers">
         <div className={styles.featureColumn}>
           <div className={styles.headlines}>
             <p>For City Explorers & Experience Seekers</p>
@@ -50,7 +50,7 @@ export default function FeatureSection() {
 
       </div>
 
-      <div className={styles.featureContainer} id={styles.forRooftopOwners}>
+      <div className={styles.featureContainer} id="forRooftopOwners">
         <div className={styles.featureColumn}>
           <div className={styles.featureImageWrapper}>
             <Image className={styles.featureImage} src="/images/image-2.png" alt="Man on top of a rooftop on urban setting" width={1123} height={934} />
