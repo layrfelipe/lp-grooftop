@@ -1,0 +1,762 @@
+@media (max-width: 400px) {
+    .page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #272727;
+            }
+
+            p {
+                font-size: .9rem;
+                font-weight: 400;
+                color: #272727;
+                margin-top: 1rem;
+            }
+
+            .form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-top: 2rem;
+
+                label {
+                    font-size: .75rem;
+                    font-weight: 700;
+                    color: #272727;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    height: 2rem;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    resize: none;
+                }
+
+                .buttonWrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 1rem;
+                    
+                    .button {
+                        width: 100%;
+                        background-color: #E50067;
+                        color: #fff;
+                        border: none;
+                        border-radius: 0.5rem;
+                        padding: 1rem 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+    .page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #272727;
+            }
+
+            p {
+                font-size: .9rem;
+                font-weight: 400;
+                color: #272727;
+                margin-top: 1rem;
+            }
+
+            .form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-top: 2rem;
+
+                label {
+                    font-size: .75rem;
+                    font-weight: 700;
+                    color: #272727;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    height: 2rem;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    resize: none;
+                }
+
+                .button {
+                    width: 100%;
+                    height: 2rem;
+                    margin-top: 2rem;
+                    background-color: #E50067;
+                    color: #fff;
+                    border: none;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    
+                }
+                
+            }
+        }
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #272727;
+            }
+
+            p {
+                font-size: .9rem;
+                font-weight: 400;
+                color: #272727;
+                margin-top: 1rem;
+            }
+
+            .form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-top: 2rem;
+
+                label {
+                    font-size: .75rem;
+                    font-weight: 700;
+                    color: #272727;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    height: 2rem;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    resize: none;
+                }
+
+                .buttonWrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    
+                    .button {
+                        background-color: #E50067;
+                        color: #fff;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 0.5rem;
+                        padding: 1rem 4rem;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #C20056;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #272727;
+            }
+
+            p {
+                font-size: .9rem;
+                font-weight: 400;
+                color: #272727;
+                margin-top: 1rem;
+            }
+
+            .form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-top: 2rem;
+
+                label {
+                    font-size: .75rem;
+                    font-weight: 700;
+                    color: #272727;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    height: 2rem;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    resize: none;
+                }
+
+                .buttonWrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    
+                    .button {
+                        background-color: #E50067;
+                        color: #fff;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 0.5rem;
+                        padding: 1rem 4rem;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #C20056;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
+
+@media (min-width: 1201px) and (max-width: 1500px) {
+    .page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 4rem 12rem;
+
+            h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #272727;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 400;
+                color: #272727;
+                margin-top: .5rem;
+            }
+
+            .form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-top: 2rem;
+
+                label {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: #E50067;
+                    margin-bottom: .25rem;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    height: 2rem;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    resize: none;
+                }
+
+                .buttonWrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    
+                    .button {
+                        background-color: #E50067;
+                        color: #fff;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 0.5rem;
+                        padding: 1rem 4rem;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #C20056;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1501px) and (max-width: 1800px) {
+    .page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 4rem 12rem;
+
+            h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #272727;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 400;
+                color: #272727;
+                margin-top: .5rem;
+            }
+
+            .form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-top: 2rem;
+
+                label {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: #E50067;
+                    margin-bottom: .25rem;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    height: 2rem;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    resize: none;
+                }
+
+                .buttonWrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    
+                    .button {
+                        background-color: #E50067;
+                        color: #fff;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 0.5rem;
+                        padding: 1rem 4rem;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #C20056;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1801px) and (max-width: 2100px) {
+    .page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 4rem 12rem;
+
+            h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #272727;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 400;
+                color: #272727;
+                margin-top: .5rem;
+            }
+
+            .form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-top: 2rem;
+
+                label {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: #E50067;
+                    margin-bottom: .25rem;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    height: 2rem;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    resize: none;
+                }
+
+                .buttonWrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    
+                    .button {
+                        background-color: #E50067;
+                        color: #fff;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 0.5rem;
+                        padding: 1rem 4rem;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #C20056;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 2101px) and (max-width: 2400px) {
+    .page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 4rem 12rem;
+
+            h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #272727;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 400;
+                color: #272727;
+                margin-top: .5rem;
+            }
+
+            .form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-top: 2rem;
+
+                label {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: #E50067;
+                    margin-bottom: .25rem;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    height: 2rem;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    resize: none;
+                }
+
+                .buttonWrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    
+                    .button {
+                        background-color: #E50067;
+                        color: #fff;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 0.5rem;
+                        padding: 1rem 4rem;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #C20056;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 2401px) {
+    .page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 4rem 12rem;
+
+            h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #272727;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 400;
+                color: #272727;
+                margin-top: .5rem;
+            }
+
+            .form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-top: 2rem;
+
+                label {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: #E50067;
+                    margin-bottom: .25rem;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    height: 2rem;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    resize: none;
+                }
+
+                .buttonWrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    
+                    .button {
+                        background-color: #E50067;
+                        color: #fff;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 0.5rem;
+                        padding: 1rem 4rem;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #C20056;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

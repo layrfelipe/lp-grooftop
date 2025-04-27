@@ -1,0 +1,978 @@
+@media (max-width: 400px) {
+  .footer {
+    width: 100%;
+    min-height: 8rem;
+    background: #E50067;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding: 4rem 2rem;
+  
+      .logoContainer {
+          position: relative;
+          width: 60%;
+          height: 60%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          .logo {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+          }
+      }
+  
+      .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        
+        .navList {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          list-style: none;
+          
+          .navColumn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .navItem {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+              text-align: center;
+              margin-bottom: 2rem;
+
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+          }
+        }
+      }
+  
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+  
+        .ctaButton {
+          background: #F6E700;
+          color: #E50067;
+          border: none;
+          padding: .5rem 1.5rem;
+          border-radius: 1.5rem;
+          font-size: 1.25rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          &:hover {
+            background: #e9d901;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+  .footer {
+    width: 100%;
+    min-height: 8rem;
+    background: #E50067;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding: 4rem 2rem;
+  
+      .logoContainer {
+          position: relative;
+          width: 60%;
+          height: 60%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          .logo {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+          }
+      }
+  
+      .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        
+        .navList {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          list-style: none;
+          
+          .navColumn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .navItem {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+              text-align: center;
+              margin-bottom: 2rem;
+
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+          }
+        }
+      }
+  
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+  
+        .ctaButton {
+          background: #F6E700;
+          color: #E50067;
+          border: none;
+          padding: .5rem 1.5rem;
+          border-radius: 1.5rem;
+          font-size: 1.25rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          &:hover {
+            background: #e9d901;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .footer {
+    width: 100%;
+    min-height: 8rem;
+    background: #E50067;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding: 4rem 2rem;
+  
+      .logoContainer {
+          position: relative;
+          width: 60%;
+          height: 60%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          .logo {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+          }
+      }
+  
+      .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        
+        .navList {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          list-style: none;
+          
+          .navColumn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .navItem {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+              text-align: center;
+              margin-bottom: 2rem;
+
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+          }
+        }
+      }
+  
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+  
+        .ctaButton {
+          background: #F6E700;
+          color: #E50067;
+          border: none;
+          padding: .5rem 1.5rem;
+          border-radius: 1.5rem;
+          font-size: 1.25rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          &:hover {
+            background: #e9d901;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .footer {
+    width: 100%;
+    min-height: 8rem;
+    background: #E50067;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding: 4rem 2rem;
+  
+      .logoContainer {
+          position: relative;
+          width: 60%;
+          height: 60%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          .logo {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+          }
+      }
+  
+      .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        
+        .navList {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          list-style: none;
+          
+          .navColumn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .navItem {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+              text-align: center;
+              margin-bottom: 2rem;
+
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+          }
+        }
+      }
+  
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+  
+        .ctaButton {
+          background: #F6E700;
+          color: #E50067;
+          border: none;
+          padding: .5rem 1.5rem;
+          border-radius: 1.5rem;
+          font-size: 1.25rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          &:hover {
+            background: #e9d901;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .footer {
+    width: 100%;
+    min-height: 8rem;
+    background: #E50067;
+    color: white;
+    
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      height: 100%;
+      padding: 2rem 8%;
+  
+      .logoContainer {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          .logo {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+          }
+      }
+  
+      .nav {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        
+        .navList {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          list-style: none;
+  
+          .navColumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            
+            .navItem {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+              margin: 1rem 0;
+
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+    
+            .navLink {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+    
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+          }
+        }
+      }
+  
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+  
+        .ctaButton {
+          background: #F6E700;
+          color: #E50067;
+          border: none;
+          padding: .5rem 1rem;
+          border-radius: 1.5rem;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          &:hover {
+            background: #e9d901;
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+@media (min-width: 1501px) and (max-width: 1800px) {
+  .footer {
+    width: 100%;
+    min-height: 8rem;
+    background: #E50067;
+    color: white;
+    
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      height: 100%;
+      padding: 2rem 8%;
+  
+      .logoContainer {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          .logo {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+          }
+      }
+  
+      .nav {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        
+        .navList {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          list-style: none;
+  
+          .navColumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            
+            .navItem {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+              margin: 1rem 0;
+
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+    
+            .navLink {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+    
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+          }
+        }
+      }
+  
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+  
+        .ctaButton {
+          background: #F6E700;
+          color: #E50067;
+          border: none;
+          padding: .5rem 1rem;
+          border-radius: 1.5rem;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          &:hover {
+            background: #e9d901;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1801px) and (max-width: 2100px) {
+  .footer {
+    width: 100%;
+    min-height: 8rem;
+    background: #E50067;
+    color: white;
+    
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      height: 100%;
+      padding: 2rem 8%;
+  
+      .logoContainer {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          .logo {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+          }
+      }
+  
+      .nav {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        
+        .navList {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          list-style: none;
+  
+          .navColumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            
+            .navItem {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+              margin: 1rem 0;
+
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+    
+            .navLink {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+    
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+          }
+        }
+      }
+  
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+  
+        .ctaButton {
+          background: #F6E700;
+          color: #E50067;
+          border: none;
+          padding: .5rem 1rem;
+          border-radius: 1.5rem;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          &:hover {
+            background: #e9d901;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 2101px) and (max-width: 2400px) {
+  .footer {
+    width: 100%;
+    min-height: 8rem;
+    background: #E50067;
+    color: white;
+    
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      height: 100%;
+      padding: 2rem 8%;
+  
+      .logoContainer {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          .logo {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+          }
+      }
+  
+      .nav {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        
+        .navList {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          list-style: none;
+  
+          .navColumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            
+            .navItem {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+              margin: 1rem 0;
+
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+    
+            .navLink {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+    
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+          }
+        }
+      }
+  
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+  
+        .ctaButton {
+          background: #F6E700;
+          color: #E50067;
+          border: none;
+          padding: .5rem 1rem;
+          border-radius: 1.5rem;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          &:hover {
+            background: #e9d901;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 2401px) {
+  .footer {
+    width: 100%;
+    min-height: 8rem;
+    background: #E50067;
+    color: white;
+    
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      height: 100%;
+      padding: 2rem 8%;
+  
+      .logoContainer {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          .logo {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+          }
+      }
+  
+      .nav {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        
+        .navList {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          list-style: none;
+  
+          .navColumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            
+            .navItem {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+              margin: 1rem 0;
+
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+    
+            .navLink {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: white;
+              text-decoration: none;
+              cursor: pointer;
+              transition: color 0.2s ease;
+    
+              &:hover {
+                color: #c8c8c8;
+              }
+            }
+          }
+        }
+      }
+  
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+  
+        .ctaButton {
+          background: #F6E700;
+          color: #E50067;
+          border: none;
+          padding: .5rem 1rem;
+          border-radius: 1.5rem;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          &:hover {
+            background: #e9d901;
+          }
+        }
+      }
+    }
+  }
+}
