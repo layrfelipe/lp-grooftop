@@ -1,8 +1,21 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.scss';
+import { useRouter } from 'next/navigation';
 
 export default function Footer() {
+  const router = useRouter();
+
+  const handleLinkClick = (routePath: string, sectionId: string | null) => {
+    if (sectionId) {
+      router.push(`${routePath}?section=${sectionId}`);
+    } else {
+      router.push(routePath);
+    }
+  }
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -13,8 +26,8 @@ export default function Footer() {
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <div className={styles.navColumn}>
-              <li className={styles.navItem}>For City Explorers & Experience Sickers</li>
-              <li className={styles.navItem}>For Rooftop Owners</li>
+              <li className={styles.navItem} onClick={() => handleLinkClick('/', 'explorers')}>For City Explorers & Experience Sickers</li>
+              <li className={styles.navItem} onClick={() => handleLinkClick('/', 'owners')}>For Rooftop Owners</li>
             </div>
             <div className={styles.navColumn}>
               <li className={styles.navItem}>
