@@ -57,6 +57,7 @@
           align-items: flex-start;
           width: 100%;
           height: 100%;
+          padding-top: 2rem;
 
           p {
             color: #E50067;
@@ -186,11 +187,17 @@
           height: 100%;
           margin-top: 2rem;
         }
+        
       }
+    }
+
+    .ownerContainer {
+      margin-top: 4rem;
     }
 
     #forRooftopOwners {
       flex-direction: column-reverse;
+      padding-top: 4rem;
 
       .headlines {
         margin-top: 6rem;

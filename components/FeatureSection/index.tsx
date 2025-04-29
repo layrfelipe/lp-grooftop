@@ -59,7 +59,7 @@ export default function FeatureSection() {
 
       </div>
 
-      <div className={styles.featureContainer} id="forRooftopOwners">
+      <div className={[styles.featureContainer, styles.ownerContainer].join(' ')} id="forRooftopOwners">
         <div className={styles.featureColumn}>
           <div className={styles.featureImageWrapper}>
             <Image className={styles.featureImage} src="/images/image-2.png" alt="Man on top of a rooftop on urban setting" width={1123} height={934} />
