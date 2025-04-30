@@ -1,6 +1,7 @@
 "use client"; // This component uses state and effects, so it must be a Client Component
 
 import React, { useState, useRef, useEffect, FormEvent } from 'react';
+import styles from './ChatBot.module.scss';
 
 // Define the structure for a chat message
 interface Message {
@@ -11,113 +12,9 @@ interface Message {
 // Define the primary color
 const PRIMARY_COLOR = '#E50067'; // <<< --- YOUR COLOR
 
-const styles = {
-  chatContainer: {
-    position: 'fixed',
-    bottom: '20px',
-    right: '20px',
-    zIndex: 1000,
-  } as React.CSSProperties,
-  chatButton: {
-    backgroundColor: PRIMARY_COLOR, // <<< --- Use primary color
-    color: 'white',
-    padding: '10px 15px',
-    borderRadius: '50%',
-    border: 'none',
-    cursor: 'pointer',
-    fontSize: '24px',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-    width: '60px',
-    height: '60px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  } as React.CSSProperties,
-  chatWindow: {
-    width: '350px',
-    height: '450px',
-    backgroundColor: 'white',
-    borderRadius: '10px',
-    boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
-    display: 'flex',
-    flexDirection: 'column',
-    overflow: 'hidden',
-    transition: 'all 0.3s ease-in-out',
-  } as React.CSSProperties,
-  chatHeader: {
-    backgroundColor: '#f1f1f1',
-    padding: '10px',
-    borderBottom: '1px solid #ccc',
-    display: 'flex', // <<< --- Use flex to position elements
-    justifyContent: 'space-between', // <<< --- Space out title and button
-    alignItems: 'center', // <<< --- Vertically align items
-    fontWeight: 'bold',
-  } as React.CSSProperties,
-  chatTitle: { // <<< --- Added style for title
-    flexGrow: 1, // Allow title to take available space
-    textAlign: 'center', // Center the title
-    paddingLeft: '28px', // Add padding to re-center title now that close button exists
-  } as React.CSSProperties,
-  chatCloseButton: { // <<< --- Style for the close button
-    background: 'none',
-    border: 'none',
-    fontSize: '18px',
-    cursor: 'pointer',
-    color: '#666',
-    padding: '0 5px', // Add some clickable area
-  } as React.CSSProperties,
-  messageList: {
-    flexGrow: 1,
-    overflowY: 'auto',
-    padding: '10px',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '10px',
-  } as React.CSSProperties,
-  messageBubble: (sender: 'user' | 'bot') => ({
-    padding: '8px 12px',
-    borderRadius: '15px',
-    maxWidth: '75%',
-    wordWrap: 'break-word',
-    alignSelf: sender === 'user' ? 'flex-end' : 'flex-start',
-    backgroundColor: sender === 'user' ? PRIMARY_COLOR : '#e5e5ea', // <<< Use primary color for user
-    color: sender === 'user' ? 'white' : 'black',
-  } as React.CSSProperties),
-  inputArea: {
-    display: 'flex',
-    padding: '10px',
-    borderTop: '1px solid #ccc',
-  } as React.CSSProperties,
-  inputField: {
-    flexGrow: 1,
-    border: '1px solid #ccc',
-    borderRadius: '15px',
-    padding: '8px 12px',
-    marginRight: '5px',
-    outline: 'none',
-  } as React.CSSProperties,
-  sendButton: {
-    border: 'none',
-    backgroundColor: PRIMARY_COLOR, // <<< --- Use primary color
-    color: 'white',
-    borderRadius: '15px',
-    padding: '8px 15px',
-    cursor: 'pointer',
-  } as React.CSSProperties,
-  loadingIndicator: {
-      padding: '8px 12px',
-      borderRadius: '15px',
-      maxWidth: '75%',
-      wordWrap: 'break-word',
-      alignSelf: 'flex-start',
-      backgroundColor: '#e5e5ea',
-      color: 'black',
-      fontStyle: 'italic',
-  } as React.CSSProperties
-};
-
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isApiHealthy, setIsApiHealthy] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { sender: 'bot', text: 'Hi there! Ask me anything about Grooftop.' }
   ]);
@@ -127,20 +24,33 @@ const Chatbot: React.FC = () => {
 
   const messageListRef = useRef<HTMLDivElement>(null);
 
-  // --- Configuration ---
-  // Replace with your actual backend URL when ready
-  const BACKEND_URL = 'http://localhost:8081/ask';
-  // Set to false to use actual fetch, true to simulate
-  const SIMULATE_BACKEND = false;
+  const BACKEND_URL = 'http://localhost:8081';
 
-  // Scroll to bottom when new messages are added
   useEffect(() => {
     if (messageListRef.current) {
       messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
     }
   }, [messages]);
 
-  const toggleChat = () => setIsOpen(!isOpen);
+  const toggleChat = async () => {
+    if (isOpen) {
+      console.log("Closing chat");
+      setIsOpen(false);
+      return
+    }
+
+    if (!isApiHealthy) {
+      console.log("Checking API health");
+      const healthCheck = await fetch(BACKEND_URL + '/health');
+      if (!healthCheck.ok) {
+        setIsApiHealthy(false);
+        return
+      }
+      setIsApiHealthy(true);
+    }
+    console.log("Opening chat");
+    setIsOpen(true);
+  }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -148,58 +58,49 @@ const Chatbot: React.FC = () => {
 
   const fetchBotResponse = async (userQuestion: string) => {
      setIsLoading(true);
-     setError(null); // Clear previous errors
+     setError(null);
 
-     if (SIMULATE_BACKEND) {
-        // --- Simulation Logic ---
-        console.log("Simulating fetch for:", userQuestion);
-        await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate delay
-        const botAnswer = `This is a simulated answer to: "${userQuestion}"`;
-        setMessages(prev => [...prev, { sender: 'bot', text: botAnswer }]);
-        // --- End Simulation Logic ---
-     } else {
-        // --- Actual Fetch Logic ---
-        try {
-            const response = await fetch(BACKEND_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ question: userQuestion })
-            });
+     const conversationHistory = messages;
 
-            if (!response.ok) {
-                // Try to get error details from response if possible
-                let errorMsg = `Error: ${response.status} ${response.statusText}`;
-                try {
-                    const errorData = await response.json();
-                    errorMsg = errorData.detail || errorMsg; // Use detail if available from FastAPI HTTPExceptions
-                } catch (parseError) {
-                    // Ignore if response body isn't JSON
-                }
-                throw new Error(errorMsg);
-            }
+      try {
+          const response = await fetch(BACKEND_URL + '/ask', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ question: userQuestion, history: conversationHistory })
+          });
 
-            const data = await response.json();
+          if (!response.ok) {
+              // Try to get error details from response if possible
+              let errorMsg = `Error: ${response.status} ${response.statusText}`;
+              try {
+                  const errorData = await response.json();
+                  errorMsg = errorData.detail || errorMsg; // Use detail if available from FastAPI HTTPExceptions
+              } catch (parseError) {
+                  // Ignore if response body isn't JSON
+              }
+              throw new Error(errorMsg);
+          }
 
-            if (data.error) {
-                // Handle errors returned *within* the JSON response
-                setError(data.error);
-                setMessages(prev => [...prev, { sender: 'bot', text: `Sorry, I encountered an error: ${data.error}` }]);
-            } else if (data.answer) {
-                setMessages(prev => [...prev, { sender: 'bot', text: data.answer }]);
-            } else {
-                 throw new Error("Received an unexpected response format from the backend.");
-            }
+          const data = await response.json();
 
-        } catch (err) {
-             console.error("Fetch error:", err);
-             const errorText = err instanceof Error ? err.message : "An unknown error occurred.";
-             setError(errorText);
-             setMessages(prev => [...prev, { sender: 'bot', text: `Sorry, I couldn't connect or process your request. Error: ${errorText}` }]);
-        }
-        // --- End Actual Fetch Logic ---
-     }
+          if (data.error) {
+              // Handle errors returned *within* the JSON response
+              setError(data.error);
+              setMessages(prev => [...prev, { sender: 'bot', text: `Sorry, I encountered an error: ${data.error}` }]);
+          } else if (data.answer) {
+              setMessages(prev => [...prev, { sender: 'bot', text: data.answer }]);
+          } else {
+                throw new Error("Received an unexpected response format from the backend.");
+          }
+
+      } catch (err) {
+            console.error("Fetch error:", err);
+            const errorText = err instanceof Error ? err.message : "An unknown error occurred.";
+            setError(errorText);
+            setMessages(prev => [...prev, { sender: 'bot', text: `Sorry, I couldn't connect or process your request. Error: ${errorText}` }]);
+      }
      setIsLoading(false);
   };
 
@@ -217,51 +118,52 @@ const Chatbot: React.FC = () => {
   };
 
   return (
-    <div style={styles.chatContainer}>
+    <div className={styles.chatContainer}>
       {isOpen ? (
-        <div style={styles.chatWindow}>
-          {/* Header with Close Button */}
-          <div style={styles.chatHeader}>
-            <span style={styles.chatTitle}>Grooftop Assistant</span> {/* Title */}
+        <div className={styles.chatWindow}>
+          <div className={styles.chatHeader}>
+            <span className={styles.chatTitle}>Grooftop Assistant</span>
             <button
-              onClick={toggleChat} // Use the same toggle function to close
-              style={styles.chatCloseButton}
+              onClick={toggleChat}
+              className={styles.chatCloseButton}
               aria-label="Close chat"
             >
-              ✕ {/* Simple 'X' character for close */}
+              ✕
             </button>
           </div>
 
           {/* Messages */}
-          <div ref={messageListRef} style={styles.messageList}>
+          <div ref={messageListRef} className={styles.messageList}>
             {messages.map((msg, index) => (
-              <div key={index} style={styles.messageBubble(msg.sender)}>
+              <div 
+                key={index} 
+                className={msg.sender === 'user' ? styles.userMessage : styles.botMessage}
+              >
                 {msg.text}
               </div>
             ))}
             {/* Loading indicator */}
-            {isLoading && <div style={styles.loadingIndicator}>Thinking...</div>}
+            {isLoading && <div className={styles.loadingIndicator}>Thinking...</div>}
           </div>
 
           {/* Input Area */}
-          <form onSubmit={handleSubmit} style={styles.inputArea}>
+          <form onSubmit={handleSubmit} className={styles.inputArea}>
             <input
               type="text"
               value={inputValue}
               onChange={handleInputChange}
-              style={styles.inputField}
+              className={styles.inputField}
               placeholder="Ask about Grooftop..."
               disabled={isLoading}
               aria-label="Chat input"
             />
-            <button type="submit" style={styles.sendButton} disabled={isLoading}>
+            <button type="submit" className={styles.sendButton} disabled={isLoading}>
               Send
             </button>
           </form>
         </div>
       ) : (
-        <button onClick={toggleChat} style={styles.chatButton} aria-label="Open chat">
-          {/* You can use an SVG icon here */}
+        <button onClick={toggleChat} className={styles.chatButton} aria-label="Open chat">
           💬
         </button>
       )}

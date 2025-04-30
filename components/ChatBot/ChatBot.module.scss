@@ -1,0 +1,443 @@
+// Define the primary color
+$PRIMARY_COLOR: #E50067;
+
+// Base styles shared across all media queries
+@mixin base-styles {
+  .chatContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .chatButton {
+    background-color: $PRIMARY_COLOR;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chatWindow {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .chatHeader {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .chatTitle {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .chatCloseButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+  }
+
+  .messageList {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .userMessage {
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 75%;
+    word-wrap: break-word;
+    align-self: flex-end;
+    background-color: $PRIMARY_COLOR;
+    color: white;
+  }
+
+  .botMessage {
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 75%;
+    word-wrap: break-word;
+    align-self: flex-start;
+    background-color: #e5e5ea;
+    color: black;
+  }
+
+  .inputArea {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+
+  .inputField {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 8px 12px;
+    margin-right: 5px;
+    outline: none;
+  }
+
+  .sendButton {
+    border: none;
+    background-color: $PRIMARY_COLOR;
+    color: white;
+    border-radius: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+
+  .loadingIndicator {
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 75%;
+    word-wrap: break-word;
+    align-self: flex-start;
+    background-color: #e5e5ea;
+    color: black;
+    font-style: italic;
+  }
+}
+
+// Small mobile devices
+@media (max-width: 400px) {
+  @include base-styles;
+  
+  .chatButton {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+  
+  .chatWindow {
+    width: 280px;
+    height: 400px;
+  }
+  
+  .chatHeader {
+    padding: 8px;
+  }
+  
+  .chatTitle {
+    padding-left: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .chatCloseButton {
+    font-size: 16px;
+    padding: 0 4px;
+  }
+  
+  .sendButton {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+// Medium mobile devices
+@media (min-width: 401px) and (max-width: 600px) {
+  @include base-styles;
+  
+  .chatButton {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    padding: 10px 15px;
+  }
+  
+  .chatWindow {
+    width: 320px;
+    height: 420px;
+  }
+  
+  .chatHeader {
+    padding: 10px;
+  }
+  
+  .chatTitle {
+    padding-left: 24px;
+    font-size: 1rem;
+  }
+  
+  .chatCloseButton {
+    font-size: 17px;
+    padding: 0 5px;
+  }
+  
+  .sendButton {
+    padding: 7px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+// Larger mobile and small tablets
+@media (min-width: 601px) and (max-width: 900px) {
+  @include base-styles;
+  
+  .chatButton {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    padding: 10px 15px;
+  }
+  
+  .chatWindow {
+    width: 350px;
+    height: 450px;
+  }
+  
+  .chatHeader {
+    padding: 10px;
+  }
+  
+  .chatTitle {
+    padding-left: 28px;
+    font-size: 1.1rem;
+  }
+  
+  .chatCloseButton {
+    font-size: 18px;
+    padding: 0 5px;
+  }
+  
+  .sendButton {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+}
+
+// Tablets and small desktops
+@media (min-width: 901px) and (max-width: 1200px) {
+  @include base-styles;
+  
+  .chatButton {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    padding: 10px 15px;
+  }
+  
+  .chatWindow {
+    width: 380px;
+    height: 480px;
+  }
+  
+  .chatHeader {
+    padding: 12px;
+  }
+  
+  .chatTitle {
+    padding-left: 28px;
+    font-size: 1.1rem;
+  }
+  
+  .chatCloseButton {
+    font-size: 18px;
+    padding: 0 5px;
+  }
+  
+  .sendButton {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+}
+
+// Small laptops and desktops
+@media (min-width: 1201px) and (max-width: 1500px) {
+  @include base-styles;
+  
+  .chatButton {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    padding: 10px 15px;
+  }
+  
+  .chatWindow {
+    width: 400px;
+    height: 500px;
+  }
+  
+  .chatHeader {
+    padding: 12px;
+  }
+  
+  .chatTitle {
+    padding-left: 30px;
+    font-size: 1.1rem;
+  }
+  
+  .chatCloseButton {
+    font-size: 18px;
+    padding: 0 5px;
+  }
+  
+  .sendButton {
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+}
+
+// Medium laptops and desktops
+@media (min-width: 1501px) and (max-width: 1800px) {
+  @include base-styles;
+  
+  .chatButton {
+    width: 65px;
+    height: 65px;
+    font-size: 26px;
+    padding: 12px 18px;
+  }
+  
+  .chatWindow {
+    width: 420px;
+    height: 520px;
+  }
+  
+  .chatHeader {
+    padding: 14px;
+  }
+  
+  .chatTitle {
+    padding-left: 32px;
+    font-size: 1.2rem;
+  }
+  
+  .chatCloseButton {
+    font-size: 20px;
+    padding: 0 6px;
+  }
+  
+  .sendButton {
+    padding: 9px 18px;
+    font-size: 1.1rem;
+  }
+}
+
+// Large desktops
+@media (min-width: 1801px) and (max-width: 2100px) {
+  @include base-styles;
+  
+  .chatButton {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+    padding: 14px 20px;
+  }
+  
+  .chatWindow {
+    width: 450px;
+    height: 550px;
+  }
+  
+  .chatHeader {
+    padding: 15px;
+  }
+  
+  .chatTitle {
+    padding-left: 35px;
+    font-size: 1.25rem;
+  }
+  
+  .chatCloseButton {
+    font-size: 22px;
+    padding: 0 7px;
+  }
+  
+  .sendButton {
+    padding: 10px 20px;
+    font-size: 1.15rem;
+  }
+}
+
+// Extra large desktops
+@media (min-width: 2101px) and (max-width: 2400px) {
+  @include base-styles;
+  
+  .chatButton {
+    width: 75px;
+    height: 75px;
+    font-size: 32px;
+    padding: 15px 22px;
+  }
+  
+  .chatWindow {
+    width: 480px;
+    height: 580px;
+  }
+  
+  .chatHeader {
+    padding: 16px;
+  }
+  
+  .chatTitle {
+    padding-left: 38px;
+    font-size: 1.3rem;
+  }
+  
+  .chatCloseButton {
+    font-size: 24px;
+    padding: 0 8px;
+  }
+  
+  .sendButton {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+  }
+}
+
+// Ultra large screens
+@media (min-width: 2401px) {
+  @include base-styles;
+  
+  .chatButton {
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
+    padding: 16px 24px;
+  }
+  
+  .chatWindow {
+    width: 500px;
+    height: 600px;
+  }
+  
+  .chatHeader {
+    padding: 18px;
+  }
+  
+  .chatTitle {
+    padding-left: 40px;
+    font-size: 1.4rem;
+  }
+  
+  .chatCloseButton {
+    font-size: 26px;
+    padding: 0 10px;
+  }
+  
+  .sendButton {
+    padding: 14px 28px;
+    font-size: 1.3rem;
+  }
+}
