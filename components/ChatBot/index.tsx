@@ -9,9 +9,6 @@ interface Message {
   text: string;
 }
 
-// Define the primary color
-const PRIMARY_COLOR = '#E50067'; // <<< --- YOUR COLOR
-
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isApiHealthy, setIsApiHealthy] = useState(false);
@@ -24,7 +21,7 @@ const Chatbot: React.FC = () => {
 
   const messageListRef = useRef<HTMLDivElement>(null);
 
-  const BACKEND_URL = 'http://localhost:8081';
+  const BACKEND_URL = 'http://localhost:8003';
 
   useEffect(() => {
     if (messageListRef.current) {
