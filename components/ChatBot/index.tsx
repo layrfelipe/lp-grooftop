@@ -21,7 +21,7 @@ const Chatbot: React.FC = () => {
 
   const messageListRef = useRef<HTMLDivElement>(null);
 
-  const BACKEND_URL = 'https://rag-lp-grooftop-backend-production.up.railway.app:8003';
+  const BACKEND_URL = 'https://rag-lp-grooftop-backend-production.up.railway.app';
 
   useEffect(() => {
     if (messageListRef.current) {
@@ -37,7 +37,6 @@ const Chatbot: React.FC = () => {
     }
 
     if (!isApiHealthy) {
-      console.log("Checking API health");
       const healthCheck = await fetch(BACKEND_URL + '/health');
       if (!healthCheck.ok) {
         setIsApiHealthy(false);
@@ -45,7 +44,6 @@ const Chatbot: React.FC = () => {
       }
       setIsApiHealthy(true);
     }
-    console.log("Opening chat");
     setIsOpen(true);
   }
 
