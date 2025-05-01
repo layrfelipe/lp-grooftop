@@ -21,7 +21,7 @@ const Chatbot: React.FC = () => {
 
   const messageListRef = useRef<HTMLDivElement>(null);
 
-  const BACKEND_URL = 'http://localhost:8003';
+  const BACKEND_URL = 'https://rag-lp-grooftop-backend-production.up.railway.app:8003';
 
   useEffect(() => {
     if (messageListRef.current) {
