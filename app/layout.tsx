@@ -4,6 +4,7 @@ import "./globals.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react"
+import Chatbot from "@/components/ChatBot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Analytics />
+        <Chatbot />
         <Footer />
       </body>
     </html>
